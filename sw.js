@@ -1,0 +1,66 @@
+;
+//Asignar nombre y versión al cache
+
+const CACHE_NAME = "v1_cache_fkrestaurant",
+urlsToCache = [
+    "./",
+    "./css/template.css",
+    "./script.js",
+    "./utils/icons/ios-call.svg",
+    "./utils/icons/ios-pin.svg",
+    "./utils/icons/logo-facebook.svg",
+    "./utils/icons/logo-instagram.svg",
+    "./utils/icons/logo-twitter.svg",
+    "./utils/icons/icon-256x256.png"
+]
+
+// Este evento almacenará los elementos estaticos en cache
+self.addEventListener("install", e=> {
+    e.waitUntil(
+        caches.open(CACHE_NAME)
+        .then(cache => {
+            return cache.addAll(urlsToCache)
+            .then(() => self.skipWaiting())
+        })
+        .catch(err => console.log("Error en registro del cache", err))
+    )
+})
+
+// Tras instalar el SW este evento servirá para que al perder
+// la conexión se busquen los elementos que esten en cache para cargarlos.
+
+self.addEventListener("activate", e=> {
+    const cacheWhitelist = [CACHE_NAME]
+
+    e.waitUntil(
+        caches.keys()
+        .then(cachesNames => {
+            cachesNames.map(cacheName => {
+                // Se elimina lo que ya no es necesario en cache
+                if (cacheWhitelist.indexOf(cacheName) === 1) {
+                    return caches.delete(cacheName)
+                }
+            })
+        })
+        // Indica al SW activar el cache actual
+        .then(() => self.clients.claim())
+    )
+})
+
+// Este evento recuperará los archivos al recuperar la conexión.
+
+self.addEventListener("fetch", e=> {
+    // Responder con objeto en cache o con url real si la encuentra
+    e.respondWith(
+        cache.match(e.request)
+        .then(res => {
+            if(res) {
+                // Recuperando del cache
+                return res;
+            }
+
+            //Recuperar la petición de la url
+            return fetch(e.request);
+        })
+    )
+})
