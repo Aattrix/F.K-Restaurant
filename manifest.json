@@ -1,0 +1,57 @@
+{
+    "name": "FKRestaurant",
+    "short_name": "F.K.R",
+    "description": "Bienvenidos a nuestra web cuyo porcentaje de comidas es nulo",
+    "background_color": "#fff",
+    "theme_color": "#52b788",
+    "orientation": "portrait",
+    "display": "standalone",
+    "start_url": "./?utm_source=web_app_manifest",
+    "scope": "./",
+    "lang": "es-ES",
+    "icons": [
+        {
+            "src": "./utils/icons/ios-call.svg",
+            "sizes": "150x150",
+            "type": "image/svg",
+            "purpose":"maskable any"
+        },
+        {
+            "src": "./utils/icons/ios-pin.svg",
+            "sizes": "150x150",
+            "type": "image/svg",
+            "purpose":"maskable any"
+        },
+        {
+            "src": "./utils/icons/Logo F.K Restaurant.svg",
+            "sizes": "479x63",
+            "type": "image/svg",
+            "purpose":"maskable any"
+        },
+        {
+            "src": "./utils/icons/logo-facebook.svg",
+            "sizes": "150x150",
+            "type": "image/svg",
+            "purpose":"maskable any"
+        },
+        {
+            "src": "./utils/icons/logo-instagram.svg",
+            "sizes": "150x150",
+            "type": "image/svg",
+            "purpose":"maskable any"
+        },
+        {
+            "src": "./utils/icons/logo-twitter.svg",
+            "sizes": "150x150",
+            "type": "image/svg",
+            "purpose":"maskable any"
+        },
+        {
+            "src": "./utils/icons/Moluscos.png",
+            "sizes": "512x512",
+            "type": "image/svg",
+            "purpose":"maskable any"
+        }
+
+    ]
+}

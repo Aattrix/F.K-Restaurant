@@ -1,0 +1,414 @@
+@font-face {
+    font-family: readexPro;
+    src: url(../utils/fonts/readex-pro/ReadexPro-Light.ttf);
+}
+
+@font-face {
+    font-family: rowdies;
+    src: url(../utils/fonts/rowdies/Rowdies-Regular.ttf);
+}
+
+@font-face {
+    font-family: barlow;
+    src: url(../utils/fonts/barlow/Barlow-Regular.ttf);
+}
+
+:root {
+    --var-color-dark: rgba(8, 28, 21, 1);
+    --var-color-light: rgba(82, 183, 136, 1);
+    --var-color-lighter: rgba(149, 213, 178, 1);
+}
+
+/* ------------------------------------------------------
+    ESTILOS GENERALES
+   ------------------------------------------------------ */
+html, body {
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: barlow;
+    color: var(--var-color-dark);
+}
+
+h1 {
+    font-family: rowdies;
+}
+
+h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.background-dark {
+    background-color: var(--var-color-dark);
+}
+
+.background-light {
+    background-color: var(--var-color-light);
+}
+
+.background-lighter {
+    background-color: var(--var-color-lighter);
+}
+
+.text-dark {
+    color: var(--var-color-dark);
+}
+
+.text-light {
+    color: var(--var-color-light);
+}
+
+.text-lighter {
+    color: var(--var-color-lighter);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ------------------------------------------------------
+    NAVBAR
+   ------------------------------------------------------ */
+
+.navbar {
+    z-index: 1;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 8px 8px -4px rgb(0, 0, 0, .2);
+}
+
+.sticky + .slideshow-container {
+    padding-top: 60px;
+}
+
+.sticky + .wrap {
+    padding-top: 60px;
+}
+
+.navbar .menu-group {
+    height: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navbar .left-nav {
+    justify-self: flex-start;
+}
+
+.navbar .right-nav {
+    justify-self: flex-end;
+}
+
+.menu-group .nav-link {
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+
+/* -----------------------------------------------
+    TITULO DE LA PÁGINA
+   ----------------------------------------------- */
+
+.head-title {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.head-title h1 {
+    font-size: 65px;
+}
+
+/* -----------------------------------------------
+    PÁGINA PRINCIPAL
+   ----------------------------------------------- */
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+h3 {
+    text-align: center;
+}
+
+
+/* Articulos */
+
+.article {
+    flex: 1 0 auto;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.column {
+    flex-direction: column;
+    align-items: center;
+}
+
+.article .article-text {
+    width: 50%;
+    height: 100%;
+    
+    text-align: justify;
+}   
+
+.article .article-img {
+    width: 50%;
+    padding: 50px;
+}
+
+.article-contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.article-contacto div {
+    width: 80%;
+}
+
+.form-contacto {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-contacto input:first-of-type {
+    margin: 0 0 20px 0;
+}
+
+.form-contacto input {
+    margin: 20px 0;
+}
+
+.form-reserva form input:not([type="submit"]), .form-reserva form select{
+    width: 200px;
+    height: 40px;
+
+    text-align: center;
+}
+
+.carta-banner {
+    background-image: url(../utils/images/banner-comidas-para2.jpg);
+}
+
+.article .title-carta h1 {
+    border-bottom: 1px solid;
+}
+
+.h2-carta {
+    font-size: 50px;
+    border-bottom: 1px solid;
+}
+
+/* Tarjetas */
+
+.article-cards {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.article-cards .card {
+    flex-grow: 1;
+    flex-basis: 29%;
+    max-width: 400px;
+    box-shadow: 0px 0px 6px 2px rgb(0 0 0 / 20%);
+    border-radius: 20px;
+    margin: 40px;
+
+    background-color: var(--var-color-lighter);
+}
+
+.card img {
+    width: 100%;
+    max-height: 200px;
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.card .text {
+    text-align: center;
+    padding: 5px 20px;
+}
+
+.card .text ul {
+    text-align: initial;
+    list-style: none;
+}
+
+.card .icons img{
+    width: 50px;
+    margin: 10px 10px;
+}
+
+.card .icons {
+    display: flex;
+    justify-content: center;
+}
+
+/* Links */
+
+.body-link {
+    text-decoration: none;
+    color: #000;
+    background-color: var(--var-color-light);
+    border: none;
+    box-shadow: 0px 0px 6px 2px rgb(0 0 0 / 20%);
+    outline: black;
+    padding: 12px 65px;
+    margin: 0 0 35px 0;
+    font-weight: 300;
+    transition: ease .5s;
+}
+
+.body-link:hover {
+    background-color: var(--var-color-lighter);
+}
+
+/* Footer */
+
+.footer {
+    padding: 10px 50px;
+    background-color: var(--var-color-light);
+}
+
+.footer div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 50%;
+    height: 150px;
+    
+}
+
+/* -----------------------------------------------
+    MEDIA
+   ----------------------------------------------- */
+
+@media (max-width: 767px) {
+    /*
+    body, html {
+        width: 420px;
+        overflow-x: hidden;
+    }*/
+
+    .head-title h1 {
+        font-size: 50px;
+    }
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .article {
+        flex-direction: column;
+        align-items: centerº;
+    }
+
+    .article .article-img {
+        width: 100%;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    iframe {
+        width: 100%;
+        height: 350px;
+    }
+
+    .article .article-text {
+        width: 100%;
+    }
+
+    .form-reserva form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-reserva form input, .form-reserva form select {
+        margin:  10px 0;
+    }
+
+    .footer div {
+        width: 100%;
+    }
+
+  }
+
+  @media (max-width: 1060px) and (min-width: 768px) {
+    /*
+    body, html {
+        width: 100%;
+        overflow-x: hidden;
+    }*/
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .head-title h1 {
+        font-size: 60px;
+    }
+
+    .article .article-img {
+        width: 100%;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    iframe {
+        width: 100%;
+    }
+
+    .article .article-text {
+        width: 80%;
+    }
+
+    .article {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-reserva form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-reserva form input, .form-reserva form select {
+        margin:  10px 0;
+    }
+
+    .footer div {
+        width: 100%;
+    }
+  }
