@@ -52,15 +52,14 @@ self.addEventListener("activate", e=> {
 self.addEventListener("fetch", e=> {
     // Responder con objeto en cache o con url real si la encuentra
     e.respondWith(
-        cache.match(e.request)
+        caches.match(e.request)
         .then(res => {
             if(res) {
                 // Recuperando del cache
-                return res;
+                return res
             }
-
             //Recuperar la petición de la url
-            return fetch(e.request);
-        })
+            return fetch(e.request)
+        }).catch(() => caches.match("offline.html"))
     )
 })
