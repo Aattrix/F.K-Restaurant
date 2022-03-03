@@ -3,15 +3,7 @@
 
 const CACHE_NAME = "v1_cache_fkrestaurant",
 urlsToCache = [
-    "./",
-    "./css/template.css",
-    "./script.js",
-    "./utils/icons/ios-call.svg",
-    "./utils/icons/ios-pin.svg",
-    "./utils/icons/logo-facebook.svg",
-    "./utils/icons/logo-instagram.svg",
-    "./utils/icons/logo-twitter.svg",
-    "./utils/icons/icon-256x256.png"
+    "./offline.html"
 ]
 
 // Este evento almacenará los elementos estaticos en cache
